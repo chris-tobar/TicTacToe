@@ -65,6 +65,20 @@ public class TicTacToe {
 
     }//End of winner method
 
+    public boolean tie()
+    {
+        for(int i=0; i< board.length ; i++)
+        {
+            for(int j=0; j< board[0].length; j++)
+            {
+                if(this.board[i][j] == "")
+                    return false;
+            }
+        }
+
+        return true;
+    }//End of tie method
+
     public void printBoard(){
         for(int i=0; i < board.length; i++)
         {

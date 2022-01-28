@@ -5,7 +5,7 @@ public class MainRunner{
         
         TicTacToe game = new TicTacToe();
         game.instructions();
-
+        game.verify("10");
         System.out.println("End of runner");
     }//End of main runner
 

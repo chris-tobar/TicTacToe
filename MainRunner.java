@@ -1,9 +1,12 @@
 
-class MainRunner{
+public class MainRunner{
 
-    public static void main(String args[]) {
+    public static void main(String args[]){
         
-        System.out.println("Hello world!");
+        TicTacToe game = new TicTacToe();
+        game.instructions();
+
+        System.out.println("End of runner");
     }//End of main runner
 
 }//End of class

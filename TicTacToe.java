@@ -1,8 +1,8 @@
 
 public class TicTacToe {
     
-    int turn;
-    String[][] board = new String[3][3];
+    private int turn;
+    private String[][] board = new String[3][3];
 
     public TicTacToe(){
         this.turn = 1;
@@ -14,6 +14,26 @@ public class TicTacToe {
 
     }//End of constructor
 
+
+    public void play(int choice)
+    {
+        //If they enter 3, we still are on the first row, so to prevent that we minus the choice value by 1
+        int row = (choice-1)/3;
+        int col = (choice-1)%3;
+
+        //Place the letter in its spot, then alternate to the other players turn
+        if (turn == 1)
+        {
+            board[row][col] = Player.ONE.letter();
+            this.turn = 2;
+        }
+        else
+        {
+            board[row][col] = Player.TWO.letter();
+            this.turn = 1;
+        }
+
+    }//End of play method
 
     public void printBoard(){
         for(int i=0; i < board.length; i++)
@@ -75,7 +95,7 @@ public class TicTacToe {
         }
 
         return true;
-        
+
     }//End of verify method
 
 }//End of TicTacToe class
